@@ -14,3 +14,7 @@ if(Boost_FOUND)
 	#add_executable(vpercnode vpercnode.cpp)
     target_link_libraries(vpercnode ${Boost_LIBRARIES})
 endif()
+
+include_directories(librabbitmq SimpleAmqpClient)
+#link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib_linux64/)
+target_link_libraries(vpercnode ${CMAKE_CURRENT_SOURCE_DIR}/lib_linux64/librabbitmq.so ${CMAKE_CURRENT_SOURCE_DIR}/lib_linux64/libSimpleAmqpClient.so)
