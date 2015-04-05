@@ -1,3 +1,9 @@
+.directory
+.cproject
+.project
+Makefile
+vpercnode
+
 # Compiled Object files
 *.slo
 *.lo
@@ -26,3 +32,6 @@
 *.exe
 *.out
 *.app
+/CMakeFiles/
+/cmake_install.cmake
+/CMakeCache.txt
