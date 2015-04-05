@@ -20,7 +20,7 @@ Butuh:
 
 ## Prepare: Linux
 
-```
+```bash
 sudo apt-get install build-essential cmake libboost-all-dev
 ```
 
@@ -28,7 +28,7 @@ sudo apt-get install build-essential cmake libboost-all-dev
 
 Use in-source build to make it easy:
 
-```
+```bash
 cmake -G"Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug .
 ```
 
