@@ -11,10 +11,12 @@ Butuh:
 4. [rabbitmq-c 0.6.0](https://github.com/alanxz/rabbitmq-c)
 5. [SimpleAmqpClient](https://github.com/alanxz/SimpleAmqpClient)
 
+	```bash
 	mkdir ~/tmp/SimpleAmqpClient-2.4.0/build
 	cd ~/tmp/SimpleAmqpClient-2.4.0/build
 	cmake -D Rabbitmqc_INCLUDE_DIR=~/tmp/rabbitmq-c-0.6.0/librabbitmq/ -D Rabbitmqc_LIBRARY=~/tmp/rabbitmq-c-0.6.0/build/librabbitmq/librabbitmq.so ..
 	make -j8
+	```
 
 ## Prepare: Linux
 
