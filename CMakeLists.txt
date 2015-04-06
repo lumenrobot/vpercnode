@@ -12,7 +12,7 @@ message(status "** Boost Libraries: ${Boost_LIBRARIES}")
 
 include_directories(src)
 #link_directories(${CMAKE_CURRENT_SOURCE_DIR}/src)
-add_executable(vpercnode src/vpercnode.cpp src/MoveTo.cpp)
+add_executable(vpercnode src/vpercnode.cpp src/MoveTo.cpp src/JointInterpolateAngle.cpp)
 #target_compile_features(vpercnode PRIVATE cxx_range_for)
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11") 
 

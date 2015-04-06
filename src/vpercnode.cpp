@@ -5,9 +5,10 @@
 #include <boost/format.hpp>
 #include <boost/property_tree/ptree.hpp>
 #include <boost/property_tree/json_parser.hpp>
+#include <JointInterpolateAngle.hpp>
+#include <MoveTo.hpp>
 
 #include "SimpleAmqpClient/SimpleAmqpClient.h"
-#include "MoveTo.h"
 
 using namespace std;
 using namespace AmqpClient;
@@ -58,17 +59,21 @@ int main(int argc, char **argv) {
 				cout << boost::format("%1% = %2%") % entry.first % entry.second.get_value("") << endl;
 			}
 
-			if (inpt.get("@type", "") == "MoveTo") {
+			string clazz = inpt.get("@type", "");
+			if (clazz == "MoveTo") {
 				MoveTo moveTo = MoveTo(inpt);
 				cout << "MoveTo object: " << moveTo.str() << endl;
+			} else if (clazz == "JointInterpolateAngle") {
+				JointInterpolateAngle obj = JointInterpolateAngle(inpt);
+				cout << "Message object: " << obj.str() << endl;
 			}
 
 			channel->BasicAck(envelope);
 			break;
 		} else {
-			cout << "No message" << "\n";
+			cout << "No message" << endl;
 		}
 	}
 
-	cout << "Done" << "\n";
+	cout << "Done" << endl;
 }
