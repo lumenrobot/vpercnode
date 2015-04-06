@@ -5,8 +5,8 @@ Virtual Perception C++ based Node that can receive and send commands to Lumen di
 
 Butuh:
 
-1. CMake 
-2. BOOST 1.54
+1. CMake 2.8.12+
+2. [BOOST 1.54+](http://www.boost.org/)
 3. gcc 4.8.2+ (Linux)
 4. [rabbitmq-c 0.6.0](https://github.com/alanxz/rabbitmq-c)
 5. [SimpleAmqpClient](https://github.com/alanxz/SimpleAmqpClient)
@@ -24,7 +24,7 @@ Butuh:
 sudo apt-get install build-essential cmake libboost-all-dev
 ```
 
-## Generate Eclipse Project
+## Generate Eclipse CDT Project
 
 Use in-source build to make it easy:
 
@@ -32,3 +32,8 @@ Use in-source build to make it easy:
 cmake -G"Eclipse CDT4 - Unix Makefiles" -D CMAKE_BUILD_TYPE=Debug .
 ```
 
+Troubleshooting: [Cannot find `string/iostream` in Eclipse](http://stackoverflow.com/a/21469917), but `make` works:
+Go to Project > Properties > C/C++ General > Preprocessor Includes... > Providers
+and select "CDT GCC Built-in Compiler Settings"
+
+Why this is not set automatically by CMake? http://answers.ros.org/question/61407/standard-system-include-paths-missing-in-eclipse-from-catkin_make/?answer=61498#post-id-61498
