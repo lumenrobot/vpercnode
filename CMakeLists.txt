@@ -24,7 +24,7 @@ if(Boost_FOUND)
 endif()
 
 include_directories(librabbitmq SimpleAmqpClient)
-#link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib_linux64/)
+link_directories(${CMAKE_CURRENT_SOURCE_DIR}/lib_linux64/)
 target_link_libraries(vpercnode ${CMAKE_CURRENT_SOURCE_DIR}/lib_linux64/librabbitmq.so ${CMAKE_CURRENT_SOURCE_DIR}/lib_linux64/libSimpleAmqpClient.so)
 
 # http://stackoverflow.com/q/10688549/122441
