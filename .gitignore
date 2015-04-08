@@ -4,6 +4,7 @@
 Makefile
 vpercnode
 .settings
+build
 
 # Compiled Object files
 *.slo
